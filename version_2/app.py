@@ -43,6 +43,13 @@ async def upload(file: UploadFile = File(...)):
         f.write(await file.read())
 
     try:
+        if len(vectorstores) >= MAX_DOCUMENTS:
+            logger.warning(f"Upload rejected: Maximum number of documents ({MAX_DOCUMENTS}) reached.")
+            raise HTTPException(
+            status_code=400, 
+            detail=f"Error: Maximum number of documents ({MAX_DOCUMENTS}) reached. Please delete some documents before uploading new ones."
+            )
+
         pdf = PDFIngestion(file_path)
         docs = pdf.load_file()
         
