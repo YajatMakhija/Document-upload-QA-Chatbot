@@ -1,21 +1,37 @@
-# QA Document Chatbot
+# Advanced Multi-Document RAG System with Agentic Routing
 
-A FastAPI-based question-answering chatbot for PDF documents, utilizing Retrieval-Augmented Generation (RAG) with agentic routing, multilingual support, and conversation memory. The chatbot ingests PDFs, generates embeddings, stores metadata in MongoDB, and answers queries based on document content.
+A production-ready Retrieval-Augmented Generation (RAG) system that intelligently routes queries across multiple document collections using advanced AI techniques. Built with LangChain, FAISS, and Google's Gemini LLM.
 
 ## Description
 
 This project is a document-based QA chatbot that enables users to upload PDF files, query their contents, and receive accurate responses. It supports multiple documents, remembers conversation history, and leverages advanced RAG techniques for efficient retrieval. The application is dockerized for seamless deployment and uses Google's Gemini-1.5-Flash for language modeling and EmbeddingGemma for multilingual embeddings.
 
-## Features
+# Key Features
+## 🎯 Intelligent Agentic Routing
 
-- Upload and process multiple PDF documents.
-- Generate document summaries and embeddings for efficient search.
-- Agentic RAG pipeline with Maximum Marginal Relevance (MMR) ranking for improved retrieval.
-- Conversation memory to retain up to 6 previous chat turns.
-- Multilingual support for over 100 languages (via EmbeddingGemma).
-- Store document metadata (file name, size, pages, description) in MongoDB.
-- Delete all files and vectorstores (`/delete`) to clear storage and reset state.
-- Dockerized for easy setup and deployment.
+- Multi-Agent Architecture: Separate Router Agent and RAG Agent for optimal performance
+- Smart Document Selection: AI-powered routing to the most relevant document collection
+- Graceful Fallbacks: Returns "I don't know" when no relevant documents are found
+
+## 🧠 Advanced Retrieval Techniques
+
+- Maximal Marginal Relevance (MMR): Ensures diverse, non-redundant context
+- Optimized Parameters: k=10, fetch_k=20, lambda_mult=0.5 for balanced relevance-diversity
+- Multi-Vectorstore Support: Independent FAISS indexes for different document types
+
+## 💬 Conversational Memory
+
+- Context-Aware: Maintains conversation history for follow-up questions
+- Memory Buffer Management: Keeps last 6 conversation turns for optimal performance
+- Structured Chat History: Clean JSON format for frontend integration
+
+## 🛡️ Production-Ready Design
+
+- Robust Error Handling: Never crashes, always returns structured responses
+- Source Attribution: Precise citations with document names and page numbers
+- Deterministic Responses: Temperature=0 for consistent, factual answers
+- Comprehensive Logging: Built-in logging for debugging and monitoring
+
 
 ## Versions
 
