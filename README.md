@@ -4,7 +4,7 @@ A production-ready Retrieval-Augmented Generation (RAG) system that intelligentl
 
 ## Description
 
-This project is a document-based QA chatbot that enables users to upload PDF files, query their contents, and receive accurate responses. It supports multiple documents, remembers conversation history, and leverages advanced RAG techniques for efficient retrieval. The application is dockerized for seamless deployment and uses Google's Gemini-1.5-Flash for language modeling and EmbeddingGemma for multilingual embeddings.
+This project is a document-based QA chatbot that enables users to upload PDF files, query their contents, and receive accurate responses. It supports multiple documents, remembers conversation history, and leverages advanced RAG techniques for efficient retrieval. The application is dockerized for seamless deployment and uses Google's Gemini-2.5-Flash for language modeling and EmbeddingGemma for multilingual embeddings.
 
 # Key Features
 ## 🎯 Intelligent Agentic Routing
@@ -57,5 +57,26 @@ This project is a document-based QA chatbot that enables users to upload PDF fil
 - Docker (for containerized deployment)
 - MongoDB (local or cloud instance, e.g., MongoDB Atlas)
 - Google API Key for Gemini (set as `GEMINI_API_KEY` in `.env`)
+
+# 🛠️ Installation & Setup
+``` bash
+pip install langchain-community langchain-google-genai faiss-cpu python-dotenv
+```
+
+- Set up environment variables
+
+``` bash
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+``` bash
+python app.py 
+```
+# 📈 Scalability
+
+- Horizontal Scaling: Add unlimited document collections
+- Efficient Routing: O(1) document selection regardless of collection size
+- Memory Efficient: Fixed memory footprint with sliding window
+- API Ready: Structured responses perfect for web applications
 
 
