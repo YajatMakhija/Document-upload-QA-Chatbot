@@ -1,0 +1,12 @@
+langchain_community
+langchain
+torch
+fastapi
+uvicorn
+pypdf
+langchain_openai
+huggingface_hub
+transformers 
+accelerate
+langchain_google_genai
+faiss

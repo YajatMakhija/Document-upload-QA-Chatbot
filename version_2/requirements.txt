@@ -1,0 +1,10 @@
+langchain_community
+langchain
+fastapi
+python-multipart
+uvicorn
+pypdf
+huggingface_hub
+langchain_google_genai
+faiss-cpu
+pymongo
